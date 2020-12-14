@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field form-group mb-4" placeholder="Name">
+  <div>
     <%= form.label :name %>
     <%= form.select(:name, options_for_select(Author.pluck(:first_name)))%>
 
@@ -19,17 +19,17 @@
    
   </div>
 
-    <div class="field form-control mb-4" placeholder="title">
+    <div>
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
-  <div class="field form-group mb-4" placeholder="content">
+  <div>
     <%= form.label :content %>
     <%= form.text_area :content %>
   </div>
 
-  <div class="field form-control mb-4" placeholder="image">
+  <div>
     <%= form.label :image %>
     <%= form.text_field :image %>
   </div>
