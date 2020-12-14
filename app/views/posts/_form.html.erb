@@ -12,9 +12,10 @@
   <% end %>
 
   <div class="field form-group mb-4" placeholder="Name">
-    <%= form.select(:name, options_for_select(Author.pluck(:first_name, :last_name)))%>
-
     <%= form.label :name %>
+    <%= form.select(:name, options_for_select(Author.pluck(:first_name)))%>
+
+    
    
   </div>
 
