@@ -5,20 +5,21 @@
   <%= @post.name %>
 </p>
 
-<p>
-  <strong>Title:</strong>
+<p class="font-weight-bold text-center">
   <%= @post.title %>
 </p>
 
-<p>
-  <strong>Content:</strong>
+<div class="d-flex justify-content-center">
+
+  <%= image_tag @post.image%>
+</div>
+
+<p class="text-justify font-italic"> 
+  
   <%= @post.content %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @post.image %>
-</p>
+
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
