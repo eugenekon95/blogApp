@@ -1,25 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<p class="text-uppercase">
+  <strong>Author</strong>
   <%= @post.name %>
 </p>
 
-<p class="">
+<p class="text-center text-uppercase display-4">
   <%= @post.title %>
 </p>
 
 <div class="d-flex justify-content-center mb-2">
 
-  <%= image_tag @post.image%>
+  <%= image_tag @post.image, class:'img-fluid'%>
 </div>
 
-<p class=""> 
+<p class="display-5 font-italic"> 
   
   <%= @post.content %>
 </p>
 
 
+<%= link_to 'Back', posts_path, class: 'btn btn-dark btn-sm', role: "button", style: "color: white"%>
+<%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-warning btn-sm', role: "button", style: "color: white" %> 
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
