@@ -2,26 +2,14 @@
 
 one:
   body: MyText
-  status: MyString
-  : 
-  [: MyString
-  : 
-  : 
-  ]: MyString
-  author_id: MyString
-  integer: MyString
-  post_id: MyString
-  integer: MyString
+  status: 1
+  author_id: 1
+  post_id: 1
+  user_id: 1
 
 two:
   body: MyText
-  status: MyString
-  : 
-  [: MyString
-  : 
-  : 
-  ]: MyString
-  author_id: MyString
-  integer: MyString
-  post_id: MyString
-  integer: MyString
+  status: 1
+  author_id: 1
+  post_id: 1
+  user_id: 1

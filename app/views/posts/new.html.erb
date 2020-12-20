@@ -1,9 +1,4 @@
-<div class="container">
-<h1 class="text-center">New Post</h1>
-<% @post.errors.any? %>
-  <% @post.errors.full_messages.each do |message| %>
-    <div class="alert alert-danger"><%=message%></div>
-  <% end %>
-<%= render 'form', post: @post %>
-<%= link_to 'Back', posts_path, class: 'btn btn-dark btn-sm mt-2 mr-4', role: "button", style: "color: white" %>
+<div class='cont'>
+  <h2>New Post</h2>
+  <%= render 'form', post: @post %>
 </div>

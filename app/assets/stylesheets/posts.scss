@@ -1,2 +1,86 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.header{
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
 
+  padding: 20px;
+  overflow: hidden;
+  color: white;
+  font-size: 3em;
+  a{
+      font-size: 0.60em;
+  }
+  .left{
+    display: inline;
+    float: left;
+  }
+  .right{
+    display: inline;
+    float: right;
+  }
+}
+.cont{
+  margin: 20px;
+  width: 60%;  
+}
+.ow_x{
+  overflow-x: auto;
+  width: 90%; 
+}
+.show_post{
+  p{
+    font-size: 15px;
+    word-break: break-word;
+    overflow: hidden;
+  } 
+}
+body{
+  a{
+    text-decoration: none;
+    color: white;
+    &:hover{
+      background: none;
+    }
+    &:visited{
+      color: white;
+    }
+  }
+  h4{
+    color: #833ab4;
+  }
+  td{
+    p {
+      font-size: 15px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 350px;
+    }
+  }
+  h2{
+    color: #833ab4; 
+  }
+  .select_author{
+    width: 30%;
+    background-color:  #833ab4;
+    color: white;
+    padding: 5px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .none{
+    display: none;
+  }
+  .header{
+    font-size: 1.5em;
+  }
+  .cont{
+    width: 90% ;
+    .select_author{
+      width: 200px;
+    }
+  }
+}
 
