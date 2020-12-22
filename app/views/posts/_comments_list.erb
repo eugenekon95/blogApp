@@ -13,7 +13,7 @@
 
 <form action="<%= post_path(@post) %>" method='get' id='comments_show'>
   <div class='field'>
-    <select name='comments_status' class='btn btn-primary' id='comments_select'>
+    <select name='comments_status' class='btn btn-sm btn-primary' id='comments_select'>
       <option <%= @comment_status == 'published' ? 'selected' : '' %> >Published</option>
       <option <%= @comment_status == 'unpublished' ? 'selected' : '' %> >Unpublished</option>
     </select> 
@@ -21,27 +21,31 @@
 </form>
 
 <% @comments.each do |comment| %>
-  <div class='comment'>
-    <p>
-      <%= comment.body %>
-    </p>
-    <p>
-      <b><%= comment.author.full_name %></b>
-    </p>
-    <button class='btn btn-warning edit_comment'>Edit Comment</button>
+  <div class container>
+  <div class="media mb-4">
+          <img class="d-flex mr-3 mt-2 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0"><%= comment.author.full_name %></h5>
+            <%= comment.body %>
+          </div>
+           <i> updated <%= distance_of_time_in_words(comment.updated_at, Time.now) %> ago</i>
+        </div>
+        <button class='btn btn-warning btn-sm edit_comment'>Edit Comment</button>
     <div class='cont add_comment update_comment invisible'>
       <h4>Edit Comment</h4>
       <%= render 'comment_form', comment: comment%>
     </div>
     <% if comment.status == 'unpublished' %>
-      <div class='btn btn-info'>
+      <div class='btn btn-info btn-sm'>
         <%= link_to 'Publish Comment', publish_post_comment_path(@post.id, comment.id), method: :post %>
       </div>
-    <% end %>
-    <div class='btn btn-danger'>
+      <div class='btn btn-danger btn-sm'>
       <%= link_to 'Destroy Comment', [comment.post, comment],
                 method: :delete,
                 data: { confirm: "Are you sure?" } %>
     </div>
+    <% end %>
+    
+ </div>
  </div>
 <% end %>
