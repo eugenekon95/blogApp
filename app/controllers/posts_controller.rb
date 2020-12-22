@@ -24,23 +24,23 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to @post, notice: 'Post was successfully created.' 
+      redirect_to @post, notice: 'Post was successfully created.'
     else
       render :new
     end
   end
 
-  def update   
+  def update
     if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.' 
+      redirect_to @post, notice: 'Post was successfully updated.'
     else
-      render :edit 
+      render :edit
     end
   end
 
   def destroy
-    @post.destroy    
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'    
+    @post.destroy
+    redirect_to posts_url, notice: 'Post was successfully destroyed.'
   end
 
   private
