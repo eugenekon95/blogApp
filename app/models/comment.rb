@@ -6,6 +6,7 @@ class Comment < ApplicationRecord
 
   validates :body, presence: true, length: { minimum: 5 }
 
-  # scope :published,   -> { where(status: :published) }
-  # scope :unpublished,   -> { where(status: :unpublished) }
+  scope :published, -> { where(status: 1) }
+  scope :unpublished, -> { where(status: 0) }
+
 end
