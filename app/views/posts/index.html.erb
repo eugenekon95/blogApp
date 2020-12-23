@@ -10,8 +10,8 @@
         <th class='none' scope="col"><h4>Description</h4></th>
         <th class='none' scope="col"><h4>Content</h4></th>
         <th class='none' scope="col"><h4>Image</h4></th>
-        <th class='none' scope="col"><h4>Comments quantity</h4></th>
-        <th class='none' scope="col"><h4>Views quantity</h4></th>
+        <th class='none' scope="col"><h4>Comments</h4></th>
+        <th class='none' scope="col"><h4>Views</h4></th>
         <th colspan="5"></th>
       </tr>
     </thead>
@@ -25,9 +25,9 @@
           <td class='none'><img src='<%= post.image %>' width='100px'></td>
           <td class='none'><p><%= post.comments_count %></p></td>
           <td class='none'><p><%= post.views_count %></p></td>
-          <td><div class='btn btn-primary'><%= link_to 'Show', post %></div></td>
-          <td><div class='btn btn-warning'><%= link_to 'Edit', edit_post_path(post) %></div></td>
-          <td><div class='btn btn-danger'><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
+          <td><div class='btn btn-primary'><%= link_to 'Show', post,role: "button", style: "color: white" %></div></td>
+          <td><div class='btn btn-warning'><%= link_to 'Edit', edit_post_path(post),role: "button", style: "color: white" %></div></td>
+          <td><div class='btn btn-danger'><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' },role: "button", style: "color: white" %></div></td>
         </tr>
       <% end %>
     </tbody>
