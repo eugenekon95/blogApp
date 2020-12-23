@@ -13,14 +13,16 @@
 
         <!-- Author -->
         <p class="lead">
-          by <%= @post.author.full_name %>
+          Posted by <%= @post.author.full_name %>
           
         </p>
 
         <hr>
 
         <!-- Date/Time -->
-       <i>updated <%= distance_of_time_in_words(@post.updated_at, Time.now) %> ago</i>
+       <i>&#9201; updated &nbsp; <%= distance_of_time_in_words(@post.updated_at, Time.now) %> ago</i>
+       <i>&#128065; &nbsp; views <%= @post.views_count %> </i>
+       <i>&#9997;&nbsp;comments <%= @post.comments.count %></i>
 
         <hr>
 
@@ -42,7 +44,7 @@
        
         <!-- Single Comment -->
        <%= render 'comments_list' %>
-        <i>№ comments <%= @post.comments.count %></i>
+       
 
 
         
