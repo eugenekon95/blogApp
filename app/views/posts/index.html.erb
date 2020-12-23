@@ -23,7 +23,7 @@
           <td class='none'><p><%= post.name %></p></td>
           <td class='none'><p><%= post.content %></p></td>
           <td class='none'><img src='<%= post.image %>' width='100px'></td>
-          <td class='none'><p><%= post.comments.count %></p></td>
+          <td class='none'><p><%= post.comments_count %></p></td>
           <td class='none'><p><%= post.views_count %></p></td>
           <td><div class='btn btn-primary'><%= link_to 'Show', post %></div></td>
           <td><div class='btn btn-warning'><%= link_to 'Edit', edit_post_path(post) %></div></td>
