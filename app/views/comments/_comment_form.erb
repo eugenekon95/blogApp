@@ -8,7 +8,7 @@
         <%= form.select(:author_id, Author.all.collect {|a| [ a.full_name, a.id ] }, {}, {:class => "select_author"}) %>
     </div>
     <div class="actions " >
-      <%= form.submit nil, class: "btn btn-success",role: "button", style: "color: white"%>
+      <%= form.submit nil, class: "btn btn-sm btn-success",role: "button", style: "color: white"%>
     </div>
   <% end %>
 </div>

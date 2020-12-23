@@ -11,21 +11,18 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Blog</a>
+      <a class="navbar-brand" <%= link_to 'Posts', posts_path %>></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <%= link_to 'New Post', new_post_path %> Home
+            <%= link_to 'New Post', new_post_path %>
           </li>
-          <li class="nav-item">
-            <%= link_to 'Home', posts_path %>
-          </li>
-          
+         
         </ul>
       </div>
     </div>
