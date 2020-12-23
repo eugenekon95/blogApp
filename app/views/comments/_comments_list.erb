@@ -1,16 +1,4 @@
 
-<script>
-  $(function(){
-    $("#comments_select").change(function(){
-      $('#comments_show').submit()
-    })
-     $(".edit_comment").click(function(){
-      $(this).parent().find('.update_comment').removeClass("invisible")
-      $(this).addClass('invisible')
-    })
-  })
-</script>
-
 <form action="<%= post_path(@post) %>" method='get' id='comments_show'>
   <div class='field'>
     <select name='comments_status' class='btn btn-sm btn-primary' id='comments_select'>
@@ -33,7 +21,7 @@
         <button class='btn btn-warning btn-sm edit_comment'>Edit Comment</button>
     <div class='cont add_comment update_comment invisible'>
       <h4>Edit Comment</h4>
-      <%= render 'comment_form', comment: comment%>
+      <%= render 'comments/comment_form', comment: comment%>
     </div>
     <% if comment.status == 'unpublished' %>
       <div class='btn btn-info btn-sm'>
