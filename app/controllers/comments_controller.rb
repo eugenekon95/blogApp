@@ -2,13 +2,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
-    message = if @comment.persisted?
-                { notice: 'Comment created successfully'}
-              else
-                { alert: "Comment was not created. Content can't be blank." }
-              end
-    redirect_to post_path(@post), message
-    
+    redirect_to post_path(@post)
   end
 
   def destroy
@@ -22,7 +16,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
     if @comment.update(comment_params)
-      redirect_to post_path(@post), notice: 'Comment was successfully updated.'
+      redirect_to post_path(@post), notice: 'Comment was successfully updated.' 
     else
       redirect_to post_path(@post)
     end
@@ -32,11 +26,10 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
     @comment.update(status: :published)
-    redirect_to post_path(@post), notice: 'Comment was successfully published.'
+    redirect_to post_path(@post), notice: 'Comment was successfully published.' 
   end
 
   private
-
   def comment_params
     params.require(:comment).permit(:body, :author_id)
   end
