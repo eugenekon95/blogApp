@@ -36,14 +36,22 @@
         <p><%= @post.content %></p>
         <hr>
         <div class='btn btn-sm btn-dark'><%= link_to 'Back', posts_path %></div>
-        <div class='btn btn-sm btn-info'><%= link_to 'Edit', edit_post_path(@post) %></div> 
+        <%if logged_in? && current_author.id == @post.author.id %>
+      <div class='btn btn-info btn-sm'><%= link_to 'Edit', edit_post_path(@post) %></div> 
+    <%end%> 
         
         <h3 class ="mt-2">Leave a comment</h3>
         <!-- Comments Form -->
-        <%= render 'comments/comment_form' %>
-       
+       <% if logged_in? %>   
+    
+      <%= render 'comments/comment_form' %>
+    <% else %>
+     <div class="alert alert-danger" role="alert">
+      Only registered user can add comment
+    </div>
+  <% end %>
         <!-- Single Comment -->
-       <%= render 'comments/comments_list' %>
+  <%= render 'comments/comments_list' %>
        
 
 
