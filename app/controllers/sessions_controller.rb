@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
   end
-  
+
   def create
     author = Author.find_by_email(params[:email])
     if author && author.authenticate(params[:password])
@@ -12,11 +12,9 @@ class SessionsController < ApplicationController
       render "new"
     end
   end
-  
+
   def destroy
     session[:author_id] = nil
     redirect_to home_path, notice: "Logged out!"
   end
-  
-  
-  end
+end

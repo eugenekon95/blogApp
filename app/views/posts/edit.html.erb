@@ -1,8 +1,17 @@
-<div class='content'>
+<div class= 'container content'>
   <h2>Editing Post</h2>
 
   <%= render 'form', post: @post %>
+  <div class="row">
+  <div class= col-lg-6>
 
-  <div class='btn btn-primary'><%= link_to 'Show', @post %></div>
+  <%= link_to 'Show', @post, class: 'btn btn-primary', role: "button", style: "color: white" %>
+  </div>
+  <div class= col-lg-6>
+  
+  <%= link_to 'Delete', @post, class: 'btn btn-danger', role: "button", style: "color: white" , method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+  </div>
 </div>
+
 

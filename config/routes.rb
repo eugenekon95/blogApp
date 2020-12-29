@@ -1,4 +1,3 @@
-
 Rails.application.routes.draw do
   get 'sessions/new'
   root 'posts#index', as: 'home'
@@ -11,8 +10,9 @@ Rails.application.routes.draw do
 
   resources :authors
   resources :posts do
+    get "search", on: :collection
     resources :comments do
-    member do
+      member do
         post :publish
       end
     end

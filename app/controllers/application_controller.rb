@@ -7,13 +7,12 @@ class ApplicationController < ActionController::Base
   def current_author
     @current_author ||= Author.find(session[:author_id]) if session[:author_id]
   end
-  
 
   def authorize
-    redirect_to login_url, alert: "Not authorized" if current_author.nil?
+    redirect_to login_path, alert: "Not authorized" if current_author.nil?
   end
 
-  def logged_in?       
-    !current_author.nil?  
+  def logged_in?
+    !current_author.nil?
   end
 end

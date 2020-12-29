@@ -1,11 +1,18 @@
 class CommentsController < ApplicationController
+  def new
+    @post = Post.find(params[:post_id])
+    @autors = Author.all
+    @comment = @post.comments.create(comment_params)
+    @comments = @post.comments
+  end
+
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
     message = if @comment.persisted?
                 { notice: 'Commented created successfully' }
               else
-                { alert: 'Comment was not created. Make sure your comment is not less then 5 chars' }
+                { alert: "Comment was not created. Content can't be blank." }
               end
     redirect_to post_path(@post), message
   end
@@ -20,11 +27,8 @@ class CommentsController < ApplicationController
   def update
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
-    if @comment.update(comment_params)
-      redirect_to post_path(@post), notice: 'Comment was successfully updated.'
-    else
-      redirect_to post_path(@post)
-    end
+    @comment.published!
+    redirect_to post_path(@post)
   end
 
   def publish
