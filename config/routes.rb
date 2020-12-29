@@ -4,11 +4,17 @@ Rails.application.routes.draw do
   get '/createaccount', to: 'authors#new', as: 'log_in'
 
   get 'signup', to: 'authors#new', as: 'signup'
+  get 'profile', to: 'authors#profile', as: 'profile'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   resources :sessions
 
-  resources :authors
+  
+  resources :authors, only: [:new, :create] do
+    get :profile, on: :collection
+    patch :save_profile, on: :collection
+  end
+
   resources :posts do
     get "search", on: :collection
     resources :comments do

@@ -13,7 +13,17 @@ class AuthorsController < ApplicationController
     end
   end
 
+  def profile
+    @author = current_author
+  end
+
+  def save_profile
+    @author = current_author
+    @author.update(author_params)
+    redirect_to profile_authors_path
+  end
+
   def author_params
-    params.require(:author).permit(:first_name, :last_name, :email, :password, :gender, :birthday)
+    params.require(:author).permit(:first_name, :last_name, :email, :password, :gender, :birthday,:avatar)
   end
 end

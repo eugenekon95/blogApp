@@ -1,0 +1,10 @@
+
+<%if @author.avatar.present?%>
+  <div>
+    <%=image_tag(author.avatar, :width=>200)%>
+  </div>
+<% else %>
+  <div>
+    <img src="http://placehold.it/50x50" width='200px'/>
+  </div>
+<% end %>
