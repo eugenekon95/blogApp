@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   resources :sessions
 
-  
   resources :authors, only: [:new, :create] do
     get :profile, on: :collection
     patch :save_profile, on: :collection
