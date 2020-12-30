@@ -12,7 +12,7 @@
   <div class container>
   <div class="media mb-4">
           
-          <%= image_tag(current_author.avatar, class: "d-flex mr-3 mt-2 ",:width=>100) %>
+          <%= image_tag(@post.author.avatar, class: "d-flex mr-3 mt-2 ",:width=>100) %>
           <div class="media-body">
             <h5 class="mt-0"><%= comment.author.full_name %></h5>
             <%= comment.body %>
