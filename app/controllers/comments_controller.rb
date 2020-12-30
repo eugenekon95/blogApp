@@ -8,11 +8,11 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(comment_params)
+    @comment = @post.comments.create(comment_params.merge(author_id: current_author.id))
     message = if @comment.persisted?
-                { notice: 'Commented created successfully' }
+                { notice: 'Comment created successfully' }
               else
-                { alert: "Comment was not created. Content can't be blank." }
+                { alert: 'Comment was not created. Make sure your comment is not less then 5 chars' }
               end
     redirect_to post_path(@post), message
   end

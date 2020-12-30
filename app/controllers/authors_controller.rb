@@ -1,7 +1,9 @@
 class AuthorsController < ApplicationController
   def new
+    cookies[:views] = 3
     @author = Author.new
   end
+
 
   def create
     @author = Author.new(author_params)

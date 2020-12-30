@@ -48,6 +48,9 @@ body{
   overflow-x: auto;
   width: 90%; 
 }
+#alert {
+  color: red; }
+
 
 @media screen and (max-width: 600px) {
   .none{
@@ -59,6 +62,7 @@ body{
     width: 200px;
   }
  }
+
 
 
 

@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
+
+
   def new
+    cookies[:views] = 3
   end
 
   def create
@@ -17,4 +20,5 @@ class SessionsController < ApplicationController
     session[:author_id] = nil
     redirect_to home_path, notice: "Logged out!"
   end
+
 end
