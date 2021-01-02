@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
@@ -19,7 +17,6 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       </ul>
       <div class="form-inline my-2 my-lg-0" style="margin-right: 2rem">
-
         <% if current_author %>
           <%= link_to "Log Out", logout_path, class: "btn btn-secondary btn-sm" , style: "color: white" %>
 
@@ -39,29 +36,10 @@
   </div>
 </nav>
 <% if cookies[:views_count].to_i > 4%>
-    <div class="modal fade show" id="exampleModalLive" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="padding-right: 16px; background-color: rgba(81,81,81,0.7); display: block;" aria-modal="true" role="dialog">
-    <div class="modal-dialog modal-lg" >
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLiveLabel">You are not authorized </h5>
-
-        </div>
-        <div class="modal-body">
-          <p>Register or login to continue posts viewing</p>
-        </div>
-        <div class="modal-footer">
-          <%= link_to "Sign up", signup_path, id: "register", class: "btn btn-info btn-sm", style: "color: white" %>
-          <%= link_to "Log In", login_path, id:"login", class: "btn btn-success btn-sm" %>
-        </div>
-      </div>
-    </div>
-  </div>
-
+   <%=render'modals/modal'%>
 <% end %>
 <div class="container">
   <%= yield %>
 </div>
-
-   
   </body>
 </html>
