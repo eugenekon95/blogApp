@@ -1,4 +1,5 @@
 
+
   <!-- Page Content -->
   <div class="container">
  <p id="notice"><%= notice %></p>
@@ -15,15 +16,22 @@
         <p class="lead">
         <%= image_tag(@post.author.avatar, class: " mr-3 mt-2 rounded-circle",:width=>100) %>
         Posted by <%= @post.author.full_name %> 
+        
+   
         </p>
+         
         </div>
+    
+
         <hr>
 
         <!-- Date/Time -->
        <i>&#9201; updated &nbsp; <%= distance_of_time_in_words(@post.updated_at, Time.now) %> ago</i>
        <i>&#128065; &nbsp; views <%= @post.views_count %> </i>
        <i>&#9997;&nbsp;comments <%= @post.comments.count %></i>
+
         <hr>
+
         <!-- Preview Image -->
         <div class ="d-flex justify-content-center"><%=image_tag(@post.image, :width=>750, :height=>500)%></div>
 
@@ -52,6 +60,7 @@
   <%= render 'comments/comments_list' %>
     </div>
     <!-- /.row -->
+
   </div>
 
 

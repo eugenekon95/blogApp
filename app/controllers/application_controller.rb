@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_author
   helper_method :logged_in?
   before_action :count_visit
-
   private
 
   def current_author
@@ -16,7 +15,7 @@ class ApplicationController < ActionController::Base
   def count_visit
     if current_author.nil?
       if cookies[:views_count].present?
-        cookies[:views_count] = cookies[:views_count].to_i + 1
+        cookies[:views_count] = cookies[:views].to_i + 1
       else
         cookies[:views_count] = 1
       end
