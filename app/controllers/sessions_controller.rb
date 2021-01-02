@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
 
   def new
-    cookies[:views] = 3
+    cookies[:views_count] = 0
   end
 
   def create
