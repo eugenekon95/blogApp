@@ -1,5 +1,5 @@
 class Author < ApplicationRecord
-  
+  has_one_attached :avatar
   has_secure_password
 
   VALID_EMAIL_REGX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

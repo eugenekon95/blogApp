@@ -19,7 +19,7 @@
             <%= link_to 'Show', post,role: "button", class: "btn btn-primary" %>
           </div>
           <div class="card-footer text-muted">
-         
+            <%= image_tag(post.author.avatar, class: "mr-3 mt-2 rounded-circle",:width=>100) %>
              Posted by <%= post.author.full_name %> 
           
           </div>
