@@ -21,6 +21,7 @@
           <%= link_to "Log Out", logout_path, class: "btn btn-secondary btn-sm" , style: "color: white" %>
 
           <%= link_to "Profile", profile_path, class: "btn btn-danger btn-sm" , style: "color: white" %>
+          <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-sm', role: "button", style: "color: white"   %>
         <% else %>
           <%= link_to "Sign up", signup_path, id: "register", class: "btn btn-secondary btn-sm", style: "color: white" %>
 
