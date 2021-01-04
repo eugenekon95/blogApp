@@ -14,7 +14,7 @@
         <!-- Author -->
         <div class="d-inline ">
         <p class="lead">
-        <%= cl_image_tag(@post.author.avatar, class: "mr-3 mt-2 rounded-circle",:width=>100) %>
+        <%= cl_image_tag(@post.author.avatar.key, width: 200, crop: :scale) %>
         Posted by <%= @post.author.full_name %> 
         
    
