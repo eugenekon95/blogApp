@@ -30,7 +30,7 @@
   <div class="form-group">
     <b><%= form.label :image %></b>
   
-    <%= form.file_field :image, class: 'form-control'  %>
+    <%= form.file_field :image, class: 'form-control',direct_upload: true   %>
   </div>
   <div class='field'> 
       <%= current_author.email %>

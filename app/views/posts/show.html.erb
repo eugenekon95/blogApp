@@ -14,7 +14,7 @@
         <!-- Author -->
         <div class="d-inline ">
         <p class="lead">
-        <%= image_tag(@post.author.avatar, class: "mr-3 mt-2 rounded-circle",:width=>100) %>
+        <%= cl_image_tag(@post.author.avatar, class: "mr-3 mt-2 rounded-circle",:width=>100) %>
         Posted by <%= @post.author.full_name %> 
         
    
@@ -33,7 +33,7 @@
         <hr>
 
         <!-- Preview Image -->
-        <div class ="d-flex justify-content-center"><%=image_tag @post.image.variant(resize:"750x300")%></div>
+        <div class ="d-flex justify-content-center"><%=cl_image_tag @post.image.variant(resize:"750x300")%></div>
 
         <hr>
 
