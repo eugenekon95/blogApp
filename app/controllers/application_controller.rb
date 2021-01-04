@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
   private
 
   def current_author
-    @current_author ||= Author.find(session[:author_id]) if session[:author_id]
+    Author.find_by(id: session[:author_id])
   end
-
+  
   def authorize
     redirect_to login_path, alert: "Not authorized" if current_author.nil?
   end
