@@ -14,8 +14,8 @@
         <!-- Author -->
         <div class="d-inline ">
         <p class="lead">
-        <%= image_tag(@author.avatar.variant(resize:"100x100"), class: "mr-3 mt-2 rounded-circle") %>
-        Posted by <%= @post.author.full_name %> 
+         <%= image_tag(post.author.avatar, class: "mr-3 mt-2 rounded-circle",:width=>100) %>
+        Posted by <%= post.author.full_name %> 
         
    
         </p>
