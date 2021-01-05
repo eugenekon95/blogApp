@@ -9,13 +9,13 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   resources :sessions
 
-  resources :authors, only: [:new, :create] do
+  resources :authors, only: %i[new create] do
     get :profile, on: :collection
     patch :save_profile, on: :collection
   end
-
+  post 'vote', to: 'votes#vote'
   resources :posts do
-    get "search", on: :collection
+    get 'search', on: :collection
     resources :comments do
       member do
         post :publish

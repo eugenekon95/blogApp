@@ -1,9 +1,11 @@
+ 
 class SessionsController < ApplicationController
   def new
-    cookies[:views_count] = 0
+    cookies[:views] = 0
   end
 
   def create
+    cookies[:views] = 0
     author = Author.find_by_email(params[:email])
     if author && author.authenticate(params[:password])
       session[:author_id] = author.id
@@ -18,4 +20,5 @@ class SessionsController < ApplicationController
     session[:author_id] = nil
     redirect_to home_path, notice: "Logged out!"
   end
+
 end

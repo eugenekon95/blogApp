@@ -8,9 +8,9 @@ class AuthorsController < ApplicationController
     @author = Author.new(author_params)
     if @author.save
       session[:author_id] = @author.id
-      redirect_to home_path notice: "Thank you for signing up!"
+      redirect_to home_path notice: 'Thank you for signing up!'
     else
-      render "new"
+      render 'new'
     end
   end
 

@@ -1,6 +1,7 @@
 class Author < ApplicationRecord
   has_one_attached :avatar
   has_secure_password
+  has_many :author_comment_votes
 
   VALID_EMAIL_REGX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :first_name, :last_name, :gender, :birthday, presence: true
@@ -11,3 +12,4 @@ class Author < ApplicationRecord
     "#{self.first_name} #{self.last_name}"
   end
 end
+
