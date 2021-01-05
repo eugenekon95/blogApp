@@ -4,3 +4,10 @@ production:
   api_secret: "QmUVbJ75q2LLT6sLSWhM-EPW2us"
   secure: true
   cdn_subdomain: true
+
+development:
+  cloud_name: "dqhmtyqki"
+  api_key: "939514836214629"
+  api_secret: "QmUVbJ75q2LLT6sLSWhM-EPW2us"
+  secure: true
+  cdn_subdomain: true
