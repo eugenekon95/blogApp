@@ -12,14 +12,14 @@
         <!-- Blog Post -->
         <% @posts.each do |post| %>
         <div class="card mb-4">
-         <%=cl_image_tag(post.image.key, width: 750, height:300, crop: :scale, class:"card-img-top" )%>
+         <%= cl_image_tag(post.image.key, class: "card-image-top",:width=>750, height:=>300) %>
           <div class="card-body">
             <h2 class="card-title"><%= post.title%></h2>
             <p class="card-text"><%= post.content%></p>
             <%= link_to 'Show', post,role: "button", class: "btn btn-primary" %>
           </div>
           <div class="card-footer text-muted">
-         <%=cl_image_tag(post.author.avatar.key, width: 100, crop: :scale)%>
+        <%= cl_image_tag(post.author.avatar.key, class: "mr-3 mt-2 rounded-circle",:width=>100) %>
              Posted by <%= post.author.full_name %> 
           
           </div>
