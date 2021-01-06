@@ -1,24 +1,18 @@
- 
 class SessionsController < ApplicationController
-  def new
-    cookies[:views] = 0
-  end
+  def new; end
 
   def create
-    cookies[:views] = 0
-    author = Author.find_by_email(params[:email])
-    if author && author.authenticate(params[:password])
-      session[:author_id] = author.id
-      redirect_to home_path, notice: "Logged in!"
+    @author = Author.find_by(email: params[:email])
+    if @author && @author.authenticate(params[:password])
+      session[:author_id] = @author.id
+      redirect_to home_path
     else
-      flash.now.alert = "Email or password is invalid"
-      render "new"
+      redirect_to login_path, alert: 'Invalid email or password'
     end
   end
 
   def destroy
     session[:author_id] = nil
-    redirect_to home_path, notice: "Logged out!"
+    redirect_to home_path
   end
-
 end

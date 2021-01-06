@@ -1,21 +1,8 @@
-.header{
-  background: rgb(131,58,180);
-  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,38,253,1) 50%, rgba(69,187,252,1) 100%);
-  padding: 20px;
-  overflow: hidden;
-  color: white;
-  font-size: 2em;
-  a{  
-      font-size: 0.60em;
-      margin-left: 5px;
-      &:hover{
-        text-decoration: underline;
-      }
-  }
+
   i{
     padding-left: 25px;
   }
-}
+
 .cont{
   margin: auto;
   text-align: justify;
@@ -25,13 +12,7 @@
   } 
 }
 
-.show_post{
-  p{
-    font-size: 15px;
-    word-break: break-word;
-    overflow: hidden;
-  } 
-}
+
 body{
   a{
     text-decoration: none;
@@ -43,50 +24,9 @@ body{
       color: white;
     }
   }
-  h4{
-    color: #833ab4;
-  }  
-  h5{
-    color: #833ab4;
-  }
-  h2{
-    color: #833ab4;
-  }
-  .select_author{
-    width: 30%;
-    background-color:  #833ab4;
-    color: white;
-    padding: 5px;
-  }
-}
-@media screen and (max-width: 600px) { 
-  .header{
-    font-size: 1em;
-  }
-  .search_imp{   
-    margin-bottom: 5%;
-  }
-  .row{
-    border-bottom: 1px solid blueviolet;
-  }
-  .comment{
-    .float{
-      width: 90%;
-    }
-    .full{
-      width: 100%;
-    }
-    .block{
-      display: block;
-      font-size: small;
-    }
-  }
-}
-@media screen and (min-width: 600px) {  
-  .comment{
-    padding-left: 40px !important;
-  }
-}
+
+ 
+
 .invisible{
   display: none !important;
 }
@@ -120,9 +60,7 @@ body{
       text-decoration: underline;
     }
   }
-  img {
-    width: 50px;
-  }
+
   a {
     text-decoration: none;
     color: white;
@@ -154,28 +92,10 @@ body{
     color: purple;
   }
 }
-.left{
-  display: inline;
-  float: left;
-}
-.right{
-  display: inline;
-  float: right;
-}
-.show_post_author img{
-  width: 100px;
-}
-.container_index{
-  a{
-    color: black !important;
-    font-weight: bold;
-    &:hover{
-      color: purple !important
-    }
-  }
-  img{
-    width: 100px;
-  }
+
+
+
+  
   .clickable{
     padding: 2%;
     text-align: justify;
@@ -193,27 +113,8 @@ body{
 .search{
   padding: 2%;
 }
-.trix-content{
-  a{
-    color: blue !important;
-    &:hover{
-      color: purple !important
-    }
-  }
-}
-.modal_login{
-  a {
-    text-decoration: none;
-    color: white;
-    &:hover{
-      background: none;
-      color: white;
-    }
-    &:visited{
-      color: white;
-    }
-  }
-}
+
+
 .pag{
   margin-left: 40%;
   padding: 20px;

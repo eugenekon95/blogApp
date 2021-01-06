@@ -1,8 +1,7 @@
 
 <div class='comment <%= "hidden_c" if comment.parent.present? %>'>
-   <%= image_tag(current_author.avatar, class: "mr-3 mt-2 rounded-circle",:width=>100) %>
-  <div class='float'>
-      <b><%= comment.author.email || comment.author.full_name %></b>
+  <div class='comment_ava float'>
+    <%= render "authors/avatar", author: comment.author %>
   </div>
   <div id="comment_<%= comment.id%>" class='full'>
       <button name='true' data-comment_id="<%= comment.id%>" class='like vote btn btn-outline-success'><i class='fa fa-thumbs-up'></i></button>

@@ -1,27 +1,26 @@
 class PostsController < ApplicationController
   before_action :set_public_post, only: %i[show]
   before_action :set_author_post, only: %i[edit update destroy]
-  
+  before_action :add_view, only: %i[index show]
+
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 8)
-    
+    @posts = Post.all
   end
 
-
   def show
-    # @comment_status = params[:comments_status].to_s.downcase
- 
-     #@comments = if @comment_status == 'unpublished'
-                  # @post.comments.unpublished
-                 #else
-                   #@post.comments.published
-                 #end
-     @comments = @post.comments.all
-     @post.update_columns(views_count: @post.views_count.to_i.succ)    
-     @post.increment!(:views_count)
-    
-   end
- 
+   # @comment_status = params[:comments_status].to_s.downcase
+
+    #@comments = if @comment_status == 'unpublished'
+                 # @post.comments.unpublished
+                #else
+                  #@post.comments.published
+                #end
+    @comments = @post.comments.all
+    @post.update_columns(views_count: @post.views_count.to_i.succ)    
+    @post.increment!(:views_count)
+   
+  end
+
   def new
     @post = Post.new
   end
@@ -44,15 +43,14 @@ class PostsController < ApplicationController
       render :edit
     end
   end
+  def search
+    @posts = Post.where('content ILIKE ? OR title ILIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")
+    render :index
+  end
 
   def destroy
     @post.destroy
     redirect_to posts_url, notice: 'Post was successfully destroyed.'
-  end
-
-  def search
-    @posts = Post.where('title LIKE OR content LIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")
-    render :index
   end
 
   private
@@ -68,4 +66,12 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:name, :title, :content, :image)
   end
+
+  def add_view
+    unless current_author
+      cookies[:views] = cookies[:views].present? ? cookies[:views].to_i + 1 : 1 
+      @show_register = cookies[:views].to_i % 5 == 0
+    end
+  end
+
 end

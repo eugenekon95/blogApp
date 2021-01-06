@@ -15,6 +15,8 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+
+
 global.$ = require('jquery')
 const $ = global.$;
 
@@ -62,5 +64,4 @@ const main = function () {
   })
 }
 
-// $(document).ready(main)
 $(document).on('turbolinks:load', main)
