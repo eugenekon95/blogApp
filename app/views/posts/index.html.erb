@@ -14,7 +14,7 @@
         <!-- Blog Post -->
         <% @posts.each do |post| %>
         <div class="card mb-4">
-         <%= cl_image_tag(@post.image.key, :width=>750,:height=>300, class: "card-img-top")%>
+         <%= cl_image_tag(post.image.key, :width=>750,:height=>300, class: "card-img-top")%>
           <div class="card-body">
             <h2 class="card-title"><%= post.title%></h2>
             <p class="card-text"><%= post.content%></p>
