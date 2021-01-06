@@ -14,7 +14,7 @@ class Author < ApplicationRecord
     /x
   
     validates :password_digest, presence: true, format: { with: PASSWORD_FORMAT }, unless: :persisted?
-    validates :email, presence: true, length: { minimum: 5, maximum: 50 },format: { with: VALID_EMAIL_REGEX },uniqueness: { case_sensitive: false }
+    validates :email, presence: true, length: { minimum: 8, maximum: 50 },format: { with: VALID_EMAIL_REGEX },uniqueness: { case_sensitive: false }
   
   def full_name
     "#{first_name} #{last_name} "
