@@ -1,9 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_author
   helper_method :logged_in?
-  before_action :count_visit
-
-  private
 
   def current_author
     Author.find_by(id: session[:author_id])

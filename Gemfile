@@ -23,17 +23,21 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 5.0.0.alpha3'
-gem 'mini_magick'
-
-# Use Active Storage variant
 gem 'image_processing', '~> 1.2'
-
+gem 'jquery-rails'
+# Use Active Storage variant
+# gem 'image_processing', '~> 1.2'
+gem 'kaminari'
+gem 'cloudinary'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+gem "font-awesome-rails"
+gem 'ancestry'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry'
 end
 
 group :development do
@@ -57,4 +61,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+gem 'rails_12factor'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

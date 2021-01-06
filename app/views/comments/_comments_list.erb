@@ -1,48 +1,29 @@
+<script>
+  $(function(){
+    /*$("#comments_select").change(function(){
+      $('#comments_show').submit()
+    })*/
+     $(".edit_comment").click(function(){
+      var $parent = $(this).parent('.comment_form_parent');
+      var $comment = $parent.find('.update_comment');
+      var $button = $(this);
+      console.log($parent, $comment, $button)
+      $comment.removeClass("invisible")
+      $button.addClass('invisible')
+    })
+  })
+</script>
 
-<form action="<%= post_path(@post) %>" method='get' id='comments_show'>
+<!--<form action="<%= post_path(@post) %>" method='get' id='comments_show'>
   <div class='field'>
-    <select name='comments_status' class='btn btn-sm btn-primary' id='comments_select'>
+    <select name='comments_status' class='btn btn-primary' id='comments_select'>
       <option <%= @comment_status == 'published' ? 'selected' : '' %> >Published</option>
       <option <%= @comment_status == 'unpublished' ? 'selected' : '' %> >Unpublished</option>
     </select> 
   </div>
-</form>
+</form> -->
 
-<% @comments.each do |comment| %>
-  <div class container>
-  <div class="media mb-4">
-          
-          <%= image_tag(@post.author.avatar, class: "d-flex mr-3 mt-2 ",:width=>100) %>
-          <div class="media-body">
-            <h5 class="mt-0"><%= comment.author.full_name %></h5>
-            <%= comment.body %>
-          </div>
-            <div>
-      <%if comment.created_at < comment.updated_at%><b>edited</b> |<%end%>
-      <% less_than_hour = comment.created_at >= 1.hour.ago %>
-      <% time = distance_of_time_in_words(comment.created_at, Time.now)%>
-     <i> created  <%= time  %> ago</i>
-    </div>
-        </div>
-         <% if logged_in? && current_author.id == comment.author.id && less_than_hour %>   
-      <button class='btn btn-warning btn-sm edit_comment'>Edit Comment</button>
-      <div class='cont add_comment update_comment invisible'>
-        <h4>Edit Comment</h4>
-        <%= render 'comments/comment_form', comment: comment%>
-      </div>
-      <% if comment.status == 'unpublished' %>
-        <div class='btn btn-primary btn-sm'>
-          <%= link_to 'Publish Comment', publish_post_comment_path(@post.id, comment.id), method: :post %>
-        </div>
-      <% end %>
-      <div class='btn btn-danger btn-sm'>
-        <%= link_to 'Destroy Comment', [comment.post, comment],
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-      </div>
-    <% end %>
- </div>
- </div>
+<% @comments.select(&:root?).each do |comment| %>
+  <br/>
+    <%= render 'comments/comment_one', comment: comment%>
 <% end %>
-
-

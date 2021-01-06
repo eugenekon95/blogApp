@@ -1,7 +1,4 @@
-
-
-  <!-- Page Content -->
-  <div class="container">
+<div class="container">
  <p id="notice"><%= notice %></p>
     <div class="row">
 
@@ -14,7 +11,7 @@
         <!-- Author -->
         <div class="d-inline ">
         <p class="lead">
-         <%= cl_image_tag(@post.author.avatar.key, class: "mr-3 mt-2 rounded-circle",:width=>100) %>
+         <%= image_tag(@post.author.avatar, class: "mr-3 mt-2 rounded-circle",:width=>100) %>
         Posted by <%= @post.author.full_name %> 
         
    
@@ -50,7 +47,7 @@
         <!-- Comments Form -->
        <% if logged_in? %>   
     
-      <%= render 'comments/comment_form' %>
+      <%= render 'comments/comment_form',parent_comment: nil %>
     <% else %>
      <div class="alert alert-danger" role="alert">
       Only registered user can add comment
@@ -62,9 +59,3 @@
     <!-- /.row -->
 
   </div>
-
-
-  
-
-
-

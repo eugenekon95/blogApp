@@ -1,6 +1,16 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+
+  i{
+    padding-left: 25px;
+  }
+
+.cont{
+  margin: auto;
+  text-align: justify;
+  width: 90%; 
+  img{
+    margin: 2%;
+  } 
+}
 
 
 body{
@@ -14,57 +24,111 @@ body{
       color: white;
     }
   }
-  h4{
-    color:#FBAB7E;
-  }
-  td{
-    p {
-      font-size: 15px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-      max-width: 350px;
-    }
-  }
-  h2{
-    color:#FBAB7E;; 
-  }
-  .select_author{
-    width: 30%;
-    background-color: #FBAB7E;
-    color: white;
-    padding: 5px;
-  }
-}
+
+ 
+
 .invisible{
   display: none !important;
 }
-
-.content{
-  margin: 20px;
-  width: 60%;  
+.comment_form{
+  background: #ebe1ff;
+  padding: 10px;
 }
-.ow_x{
-  overflow-x: auto;
-  width: 90%; 
-}
-#alert {
-  color: red; }
-
-
-@media screen and (max-width: 600px) {
-  .none{
+.comment{
+  padding: 10px;
+  background: #eceffd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  word-break: break-word;
+  overflow: hidden;
+  .hidden_c{
     display: none;
   }
-  
-  .content{
-  .select_author{
-    width: 200px;
+  .open_children{
+    color: rgb(195, 0, 255);
+    &:hover{
+      color: rgb(127, 0, 247);
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
- }
+  .reply{
+    color: blue;
+    &:hover{
+      color: blueviolet;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
 
-
-
-
+  a {
+    text-decoration: none;
+    color: white;
+    &:hover{
+      background: none;
+      color: white;
+    }
+    &:visited{
+      color: white;
+    }
+  }
+  button{
+    color: white;
+    &:hover{
+      color: white;
+    }
+  }
+  .float{
+    float: left;
+    margin-right: 2%;
+  }
+}
+#alert {
+  color: red;
+}
+.add_comment h6 a {
+  color: blue;
+  &:hover{
+    color: purple;
+  }
 }
 
+
+
+  
+  .clickable{
+    padding: 2%;
+    text-align: justify;
+    &:hover{
+      background: #ebe1ff;
+    }
+  }
+  .column{
+    overflow: hidden;
+  }
+}
+.h5_c{
+  margin-top: -3%;
+}
+.search{
+  padding: 2%;
+}
+
+
+.pag{
+  margin-left: 40%;
+  padding: 20px;
+}
+.pagination span{
+  padding-right: 10px;
+  color: purple;
+}
+.like i{
+  color: rgb(33, 182, 33);
+}
+.dislike i{
+  color: rgb(107, 0, 0);
+}
+.vote{
+  background: none !important;
+}
