@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   validates :content, presence: true
   validates :title, length: { maximum: 20, message: 'is too long' }
   validates :content, length: { maximum: 1500, message: 'is too long' }
-  paginates_per 3
+  paginates_per 1
   #max_paginates_per 8
 
 end
