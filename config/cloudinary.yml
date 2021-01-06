@@ -4,3 +4,4 @@ production:
   api_secret: "QmUVbJ75q2LLT6sLSWhM-EPW2us"
   secure: true
   cdn_subdomain: true
+

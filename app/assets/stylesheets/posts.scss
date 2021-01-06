@@ -3,14 +3,7 @@
     padding-left: 25px;
   }
 
-.cont{
-  margin: auto;
-  text-align: justify;
-  width: 90%; 
-  img{
-    margin: 2%;
-  } 
-}
+
 
 
 body{
@@ -31,7 +24,7 @@ body{
   display: none !important;
 }
 .comment_form{
-  background: #ebe1ff;
+  background: #cfc6e0;
   padding: 10px;
 }
 .comment{
@@ -87,9 +80,9 @@ body{
   color: red;
 }
 .add_comment h6 a {
-  color: blue;
+  color: rgb(47, 0, 255);
   &:hover{
-    color: purple;
+    color: rgba(17, 35, 134, 0.863);
   }
 }
 
