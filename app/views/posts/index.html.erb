@@ -32,7 +32,7 @@
      
   </div>
     <!-- /.row -->
-<%= paginate @posts, theme: 'twitter-bootstrap-4' %>
+<%= will_paginate @clients, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
   </div>
    
   </div>
