@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :add_view, only: %i[index show]
 
   def index
-    @posts = Post.all.page params[:page]
+     @posts = Post.search(params[:q]).page params[:page]
   end
 
   def show
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
     end
   end
   def search
-    @posts = Post.where('content ILIKE ? OR title ILIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")
+    @posts = Post.where('content ILIKE ? OR title ILIKE ?', "%#{params[:q]}%", "%#{params[:q]}%").paginate(page: params[:page])
     render :index
   end
 

@@ -3,9 +3,6 @@
     padding-left: 25px;
   }
 
-
-
-
 body{
   a{
     text-decoration: none;
@@ -17,8 +14,6 @@ body{
       color: white;
     }
   }
-
- 
 
 .invisible{
   display: none !important;
@@ -86,10 +81,7 @@ body{
   }
 }
 
-
-
-  
-  .clickable{
+.clickable{
     padding: 2%;
     text-align: justify;
     &:hover{
@@ -107,15 +99,6 @@ body{
   padding: 2%;
 }
 
-
-.pag{
-  margin-left: 40%;
-  padding: 20px;
-}
-.pagination span{
-  padding-right: 10px;
-  color: purple;
-}
 .like i{
   color: rgb(33, 182, 33);
 }
@@ -125,3 +108,5 @@ body{
 .vote{
   background: none !important;
 }
+
+

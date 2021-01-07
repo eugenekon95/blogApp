@@ -27,8 +27,8 @@ gem 'image_processing', '~> 1.2'
 gem 'jquery-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-gem 'kaminari'
-gem 'bootstrap4-kaminari-views'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap4'
 gem 'cloudinary'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
