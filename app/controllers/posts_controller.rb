@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :add_view, only: %i[index show]
 
   def index
-     @posts = Post.search(params[:q]).page params[:page]
+    @posts = Post.paginate(page: params[:page], per_page: 3)
   end
 
   def show
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
                 #end
     @comments = @post.comments.all
     @post.update_columns(views_count: @post.views_count.to_i.succ)    
-    @post.increment!(:views_count)
+   
    
   end
 
