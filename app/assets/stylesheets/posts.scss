@@ -19,7 +19,7 @@ body{
   display: none !important;
 }
 .comment_form{
-  background: #cfc6e0;
+  background: #e0e0e0; 
   padding: 10px;
 }
 .comment{
@@ -33,17 +33,17 @@ body{
     display: none;
   }
   .open_children{
-    color: rgb(195, 0, 255);
+    color: rgb(255, 0, 0);
     &:hover{
-      color: rgb(127, 0, 247);
+      color: rgb(247, 161, 0);
       cursor: pointer;
       text-decoration: underline;
     }
   }
   .reply{
-    color: blue;
+    color: rgb(255, 136, 0);
     &:hover{
-      color: blueviolet;
+      color: rgb(226, 70, 43);
       cursor: pointer;
       text-decoration: underline;
     }
@@ -95,15 +95,12 @@ body{
 .h5_c{
   margin-top: -3%;
 }
-.search{
-  padding: 2%;
-}
 
 .like i{
-  color: rgb(33, 182, 33);
+  color: #00e676;
 }
 .dislike i{
-  color: rgb(107, 0, 0);
+  color:#e53935;
 }
 .vote{
   background: none !important;
