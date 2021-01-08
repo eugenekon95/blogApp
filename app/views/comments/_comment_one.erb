@@ -1,6 +1,6 @@
 
 <div class='comment <%= "hidden_c" if comment.parent.present? %>'>
-  <div class='comment_ava float'>
+      <div class=' float'>
     <%= render "authors/avatar", author: comment.author %>
   </div>
   <div id="comment_<%= comment.id%>" class='full'>
@@ -18,8 +18,8 @@
   </div>    
     <% if logged_in? && current_author.id == comment.author.id && less_than_hour %>
       <span class='comment_form_parent'>   
-        <i class='fa fa-pencil-square-o btn btn-warning edit_comment'></i>
-        <div class='cont add_comment update_comment invisible'>
+        <i class='fa fa-pencil-square-o btn btn-warning edit_comment'> Edit</i>
+        <div class='add_comment update_comment invisible'>
           <h6>Edit Comment</h6>
           <%= render 'comments/comment_form', comment: comment, parent_comment: comment.parent%>
         </div>          
@@ -38,8 +38,8 @@
     
     <% if logged_in? && comment.depth < 4  %>
     <span class='comment_form_parent'>
-    <span class='reply edit_comment'>Reply</span>
-    <div class='cont add_comment update_comment invisible'>
+    <i class='fa fa-reply reply edit_comment'></i>
+    <div class='add_comment update_comment invisible'>
         <br/>
         <%= render 'comments/comment_form', parent_comment: comment%>
       </div>
