@@ -1,4 +1,5 @@
-
+<p id="notice"><%= notice %></p>
+ <p id="alert"><%= alert %></p>
 <div class='comment <%= "hidden_c" if comment.parent.present? %>'>
       <div class=' float'>
     <%= render "authors/avatar", author: comment.author %>
