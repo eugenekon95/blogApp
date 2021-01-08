@@ -11,11 +11,5 @@ class Post < ApplicationRecord
   self.per_page = 3
 
 
-  def self.search(pattern)
-    if pattern.blank?
-      all
-    else
-      where('title ILIKE ? or text ILIKE ?', "%#{pattern}%", "%#{pattern}%")
-    end
-  end
+ 
 end
