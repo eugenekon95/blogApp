@@ -27,14 +27,13 @@ gem 'image_processing', '~> 1.2'
 gem 'jquery-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'cloudinary'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
-gem 'cloudinary'
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.4', require: false
-gem "font-awesome-rails"
 gem 'ancestry'
-
+gem 'bootsnap', '>= 1.4.4', require: false
+gem 'font-awesome-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

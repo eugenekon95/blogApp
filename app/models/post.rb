@@ -9,7 +9,4 @@ class Post < ApplicationRecord
   validates :title, length: { maximum: 20, message: 'is too long' }
   validates :content, length: { maximum: 1500, message: 'is too long' }
   self.per_page = 3
-
-
- 
 end

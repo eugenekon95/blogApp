@@ -8,17 +8,15 @@ class PostsController < ApplicationController
   end
 
   def show
-   # @comment_status = params[:comments_status].to_s.downcase
+    # @comment_status = params[:comments_status].to_s.downcase
 
-    #@comments = if @comment_status == 'unpublished'
-                 # @post.comments.unpublished
-                #else
-                  #@post.comments.published
-                #end
+    # @comments = if @comment_status == 'unpublished'
+    # @post.comments.unpublished
+    # else
+    # @post.comments.published
+    # end
     @comments = @post.comments.all
-    @post.update_columns(views_count: @post.views_count.to_i.succ)    
-   
-   
+    @post.update_columns(views_count: @post.views_count.to_i.succ)
   end
 
   def new
@@ -43,6 +41,7 @@ class PostsController < ApplicationController
       render :edit
     end
   end
+
   def search
     @posts = Post.where('content ILIKE ? OR title ILIKE ?', "%#{params[:q]}%", "%#{params[:q]}%").paginate(page: params[:page])
     render :index
@@ -69,9 +68,8 @@ class PostsController < ApplicationController
 
   def add_view
     unless current_author
-      cookies[:views] = cookies[:views].present? ? cookies[:views].to_i + 1 : 1 
+      cookies[:views] = cookies[:views].present? ? cookies[:views].to_i + 1 : 1
       @show_register = cookies[:views].to_i % 5 == 0
     end
   end
-
 end

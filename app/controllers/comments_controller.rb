@@ -1,9 +1,7 @@
 class CommentsController < ApplicationController
-
   before_action :init_post
   before_action :init_comment, only: %i[destroy update]
 
-  
   def create
     @comment = @post.comments.create(comment_params.merge(author_id: current_author.id))
     message = if @comment.persisted?
@@ -27,12 +25,12 @@ class CommentsController < ApplicationController
     end
   end
 
- # def publish
-    #@post = Post.find(params[:post_id])
-    #@comment = @post.comments.find(params[:id])
-    #@comment.update(status: :published)
-    #redirect_to post_path(@post), notice: 'Comment was successfully published.'
-  #end
+  # def publish
+  # @post = Post.find(params[:post_id])
+  # @comment = @post.comments.find(params[:id])
+  # @comment.update(status: :published)
+  # redirect_to post_path(@post), notice: 'Comment was successfully published.'
+  # end
 
   private
 
